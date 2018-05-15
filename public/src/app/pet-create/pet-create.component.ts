@@ -24,6 +24,7 @@ export class PetCreateComponent implements OnInit {
   }
   createPet(){
     if(this.newpet.name.length > 2 && this.newpet.type.length > 2 && this.newpet.description.length > 2){
+      this.uniqueName = null;
       this.newpet.skills.push(this.skill1);
       this.newpet.skills.push(this.skill2);
       this.newpet.skills.push(this.skill3);

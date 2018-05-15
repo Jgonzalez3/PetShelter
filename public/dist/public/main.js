@@ -410,6 +410,7 @@ var PetCreateComponent = /** @class */ (function () {
     PetCreateComponent.prototype.createPet = function () {
         var _this = this;
         if (this.newpet.name.length > 2 && this.newpet.type.length > 2 && this.newpet.description.length > 2) {
+            this.uniqueName = null;
             this.newpet.skills.push(this.skill1);
             this.newpet.skills.push(this.skill2);
             this.newpet.skills.push(this.skill3);
@@ -634,6 +635,7 @@ var PetEditComponent = /** @class */ (function () {
     PetEditComponent.prototype.updatePet = function () {
         var _this = this;
         if (this.pet.name.length > 2 && this.pet.type.length > 2 && this.pet.description.length > 2) {
+            this.uniqueName = null;
             this.pet.skills[0] = this.skill1;
             this.pet.skills[1] = this.skill2;
             this.pet.skills[2] = this.skill3;

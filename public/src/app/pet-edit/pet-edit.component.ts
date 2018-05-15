@@ -41,6 +41,7 @@ export class PetEditComponent implements OnInit {
   }
   updatePet(){
     if(this.pet.name.length > 2 && this.pet.type.length > 2 && this.pet.description.length > 2){
+      this.uniqueName = null;
       this.pet.skills[0] = this.skill1;
       this.pet.skills[1] = this.skill2;
       this.pet.skills[2] = this.skill3;
@@ -51,7 +52,7 @@ export class PetEditComponent implements OnInit {
         console.log("Any Errors", data['error']);
         if(data['error']){
           this.uniqueName =  data['error']['errors']['name']['message'];
-        console.log(this.uniqueName);
+          console.log(this.uniqueName);
         }
         if(!this.uniqueName){
           this.redirectPetDetails();
