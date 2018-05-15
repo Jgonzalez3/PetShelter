@@ -1,0 +1,45 @@
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <h3>{{title}}</h3>
+      <h4 style="color: purple">The pet must have a name</h4>
+    </div>
+  </div>
+  <div class="border border-seconday col-sm-10" style="padding: 10px">
+    <form (submit)="createPet()">
+      <span *ngIf="newpet.name.length < 3" class="text-danger">Pet Name must be at least 3 characters</span>
+      <span *ngIf="uniqueName" class="text-danger">{{uniqueName}}</span>
+      <p class="h4">Pet Name:<input class="form-control col-sm-8" type="text" required minlength="3" name="newpet.name" [(ngModel)]="newpet.name"></p>
+      <span *ngIf="newpet.type.length < 3" class="text-danger">Pet Type must be at least 3 characters</span>
+      <p class="h4">Pet type:<input class="form-control col-sm-8" type="text" required minlength="3" name="newpet.type" [(ngModel)]="newpet.type"></p>
+      <span *ngIf="newpet.description.length < 3" class="text-danger">Pet Description must be at least 3 characters</span>
+      <p class="h4">Description:<input class="form-control col-sm-8" type="text" required minlength="3" name="newpet.description" [(ngModel)]="newpet.description"></p>
+      <h4>Skills (optional):</h4>
+      <div class="form-group row">
+        <span class="col-sm-1"></span>
+        <span class="h4 col-sm-3">Skill 1:</span>
+        <div class="col-sm-6">
+          <input class="form-control" type="text" name="skill1" [(ngModel)]="skill1">
+        </div>
+      </div>
+      <div class="form-group row">
+        <span class="col-sm-1"></span>
+        <span class="h4 col-sm-3">Skill 2:</span>
+        <div class="col-sm-6">
+          <input class="form-control" type="text" name="skill2" [(ngModel)]="skill2">
+        </div>
+      </div>
+      <div class="form-group row">
+        <span class="col-sm-1"></span>
+        <span class="h4 col-sm-3">Skill 3:</span>
+        <div class="col-sm-6">
+          <input class="form-control" type="text" name="skill3" [(ngModel)]="skill3">
+        </div>
+      </div>
+      <div class="col text-center">
+        <button class="btn btn-lg btn-primary">Add pet</button><span class="col-sm-1"></span>
+        <button class="btn btn-lg btn-primary" routerLink="/">Cancel</button>
+      </div>
+    </form>
+  </div>
+</div>

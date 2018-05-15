@@ -1,0 +1,27 @@
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <h3>{{title}}</h3>
+      <button class="btn btn-lg btn-link col-sm-8 text-left" routerLink = "/new">Add a pet to the shelter</button>
+    </div>
+  </div>
+  <div class="row">
+    <table class="table table-bordered table-striped">
+      <thead>
+        <th class="h3"><strong>Name</strong></th>
+        <th class="h3"><strong>Type</strong></th>
+        <th class="h3"><strong>Actions</strong></th>
+      </thead>
+      <tbody>
+        <tr *ngFor="let p of pets">
+          <td class="h3">{{p.name}}</td>
+          <td class="h3">{{p.type}}</td>
+          <td class="text-center">
+            <button class="btn btn-primary col-sm-5" routerLink = "/details/{{p._id}}">Details</button><span class="d-none d-sm-inline col-sm-1"></span>
+            <button class=" btn btn-warning col-sm-5" routerLink = "/edit/{{p._id}}">Edit</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

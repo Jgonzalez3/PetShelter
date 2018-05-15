@@ -1,0 +1,47 @@
+<button class="btn btn-lg btn-link float-right home" routerLink = "/">Home</button>
+<div *ngIf="pet" class="container">
+  <div class="row">
+    <div class="col">
+      <div class="h3">{{title}} {{pet.name}}</div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <strong class="text-center col-sm-4 h3">Pet type:</strong>
+      <span class="col-sm-8 font-weight-light h3">{{pet.type}}</span><br>
+    </div>
+  </div>
+  <br>
+  <div class="row">
+    <div class="col">
+      <strong class="text-center col-sm-4 h3">Description:</strong>
+      <span class="col-sm-8 font-weight-light h3">{{pet.description}}</span><br>
+    </div>
+  </div>
+  <br>
+  <div class="row">
+    <div class="col">
+      <strong class="text-center col-sm-4 h3 skills">Skills:</strong>
+      <ul class="col-sm-8 d-sm-inline-block">
+        <li *ngIf="pet.skills[0]" class="h3 font-weight-light">{{pet.skills[0]}}</li><br *ngIf="pet.skills[0]">
+        <li *ngIf="pet.skills[1]" class="h3 font-weight-light">{{pet.skills[1]}}</li><br *ngIf="pet.skills[1]">
+        <li *ngIf="pet.skills[2]" class="h3 font-weight-light">{{pet.skills[2]}}</li>
+      </ul>
+    </div>
+  </div>
+  <br>
+  <div class="row">
+    <div class="col">
+      <strong class="text-center col-sm-4 h3">Likes:</strong>
+      <span class="col-sm-8 font-weight-light h3">{{pet.likes}}</span>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <br>
+      <button *ngIf="!liked" class="btn btn-primary" (click)="likePet()">Like this pet</button>
+      <span class="col-sm-1"></span>
+      <button class="btn btn-success" (click)="deletePet()">Adopt this pet!</button>
+    </div>
+  </div>
+</div>
