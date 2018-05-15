@@ -8,7 +8,7 @@
   <div class="border border-seconday col-sm-10" style="padding: 10px">
     <form (submit)="createPet()">
       <span *ngIf="newpet.name.length < 3" class="text-danger">Pet Name must be at least 3 characters</span>
-      <span *ngIf="uniqueName" class="text-danger">{{uniqueName}}</span>
+      <p *ngIf="uniqueName" class="text-danger">{{uniqueName}}</p>
       <p class="h4">Pet Name:<input class="form-control col-sm-8" type="text" required minlength="3" name="newpet.name" [(ngModel)]="newpet.name"></p>
       <span *ngIf="newpet.type.length < 3" class="text-danger">Pet Type must be at least 3 characters</span>
       <p class="h4">Pet type:<input class="form-control col-sm-8" type="text" required minlength="3" name="newpet.type" [(ngModel)]="newpet.type"></p>
